@@ -2,18 +2,41 @@
  * @name DIKORD
  * @author chimi420
  * @version 1.1.0
- * @description A deep navy-black theme with a cool blue-purple tint, built on the Midnight base so it actually reskins current Discord. Small "DIKORD" watermark, top-left.
+ * @description A highly sophisticated Dikky Kordy theme , for dikord
  */
 
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 
 :root {
-    /* layout: flush panels, minimal rounding, like stock Discord */
+    /* layout: flush panels, like stock Discord */
     --gap: 0px;
     --border-thickness: 1px;
-    --radius-lg: 6px;
-    --radius-md: 4px;
-    --radius-sm: 3px;
+
+    /* Corner rounding -- deliberately heavy, this theme is meant to read soft.
+
+       These were 6px/4px/3px, which is why settings rows and hover pills
+       looked near-square. Midnight's build consumes var(--radius-*) in 22
+       places but never defines them, so leaving them unset falls through to
+       Discord's native radii; setting them here overrides that upward.
+
+       These are global -- popouts, modals, message bubbles and buttons all
+       follow. Two spots in midnight's build derive from them:
+         border-radius: calc(var(--radius-lg) - 4px)   -> 20px at current values
+         left: calc(var(--radius-sm) / 2)             -> 6px, a small offset
+       Both stay well-behaved at this range, but pushing --radius-lg much past
+       ~28px starts to make the derived value look detached from its parent.
+
+       To tune: raise/lower these three together, or edit --chatbar-radius below
+       for the message composer on its own. */
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+
+    /* Chat text box: Midnight never sets a radius on the message composer, so
+       this one is set here independently of the panels.
+       Targets the form's inner wrapper, not .form_ itself -- .form_ is a
+       full-bleed flex column and rounding it clips the whole chat column. */
+    --chatbar-radius: 20px;
 
     /* backgrounds, darkest -> lightest */
     --bg-4: hsla(230, 20%, 8%, 1);   /* main background */
@@ -185,21 +208,29 @@ body {
 [data-list-id="guildsnav"] [class*="stack_"] {
     gap: 8px !important;
 }
-/* add-server / discover buttons: neon glow on hover (green = add, purple = discover).
-   Discord's own hover colours made them vanish against the transparent background */
+/* add-server / discover buttons: glow on hover, tinted from this theme's own
+   accent ramp so they read as part of the palette instead of clashing with it.
+   Add-server uses --accent-2 (#7c81f2) and discover --accent-1 (#9fa4ff) --
+   adjacent steps of the same blue-purple, distinct enough to tell apart.
+   (These were hardcoded neon #39ff14 / #bf40ff, which matched nothing.)
+   Discord's own hover colours made the buttons vanish against the transparent
+   background, hence the explicit overrides.
+   To recolour, change --accent-1 / --accent-2 above -- no edits needed here. */
 [data-list-item-id="guildsnav___create-join-button"]:hover,
 [data-list-item-id="guildsnav___create-join-button"]:focus-visible {
-    color: #39ff14 !important;
-    border: 1px solid #39ff14 !important;
-    background-color: rgba(57, 255, 20, 0.12) !important;
-    box-shadow: 0 0 10px #39ff14, inset 0 0 8px rgba(57, 255, 20, 0.5) !important;
+    color: var(--accent-2) !important;
+    border: 1px solid var(--accent-2) !important;
+    background-color: color-mix(in srgb, var(--accent-2) 12%, transparent) !important;
+    box-shadow: 0 0 10px color-mix(in srgb, var(--accent-2) 60%, transparent),
+        inset 0 0 8px color-mix(in srgb, var(--accent-2) 30%, transparent) !important;
 }
 [data-list-item-id="guildsnav___guild-discover-button"]:hover,
 [data-list-item-id="guildsnav___guild-discover-button"]:focus-visible {
-    color: #bf40ff !important;
-    border: 1px solid #bf40ff !important;
-    background-color: rgba(191, 64, 255, 0.12) !important;
-    box-shadow: 0 0 10px #bf40ff, inset 0 0 8px rgba(191, 64, 255, 0.5) !important;
+    color: var(--accent-1) !important;
+    border: 1px solid var(--accent-1) !important;
+    background-color: color-mix(in srgb, var(--accent-1) 12%, transparent) !important;
+    box-shadow: 0 0 10px color-mix(in srgb, var(--accent-1) 60%, transparent),
+        inset 0 0 8px color-mix(in srgb, var(--accent-1) 30%, transparent) !important;
 }
 [class*="circleIconButton_"] {
     transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
@@ -207,6 +238,31 @@ body {
 [class*="circleIconButton_"]:hover [class*="circleIcon_"] {
     color: inherit !important;
     filter: drop-shadow(0 0 4px currentColor);
+}
+
+/* ---------- extra roundness on the chat box and server list ---------- */
+/* The three --radius-* vars above cover most panels, but two elements need
+   their own rules:
+
+   - the chat message composer has no Midnight rule at all, so it keeps
+     Discord's native radius and looks visibly tighter than its neighbours
+   - the server list is a plain <nav> with no radius, so it reads as a hard
+     rectangle against the rounded chat column beside it
+
+   Both are scoped to layout containers only, so nothing clips. */
+[class*="chatContent_"] [class*="form_"] > div {
+    border-radius: var(--chatbar-radius);
+}
+[class*="chatContent_"] [class*="slidingContainer_"] {
+    border-radius: var(--chatbar-radius);
+}
+/* NOTE: deliberately no overflow:hidden here. The guild icons are scaled to
+   1.4x and intentionally overflow their slots (see the icon block below), so
+   clipping this container would cut them off. border-radius alone only rounds
+   the background corners and leaves the icons untouched. */
+[class*="guilds_"],
+[class*="sidebar_"] {
+    border-radius: var(--radius-lg);
 }
 
 /* ---------- DIKORD watermark, top-left corner ---------- */

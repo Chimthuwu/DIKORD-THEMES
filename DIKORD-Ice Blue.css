@@ -143,24 +143,23 @@ body {
 
 /* ============================================================
    CHANNEL NAMES
+   Hover uses solid color + text-shadow instead of background-clip:text.
+   This tints the label text while leaving unicode emojis untouched,
+   since emoji glyphs ignore both `color` and `text-shadow`.
    ============================================================ */
 [class*="sidebar_"] [class*="link_"] [class*="name_"],
 [class*="sidebar_"] [class*="interactive_"] [class*="name_"] {
     color: var(--channels-default) !important;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 [class*="sidebar_"] [class*="link_"]:hover [class*="name_"],
 [class*="sidebar_"] [class*="interactive_"]:hover [class*="name_"] {
-    background: linear-gradient(180deg,
-        var(--white-1) 0%,
-        var(--channels-hover) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent !important;
-    filter: drop-shadow(0 0 4px var(--neon-glow));
-    transition: all 0.2s ease;
+    color: var(--white-1) !important;
+    text-shadow:
+        0 0 4px var(--neon-glow),
+        0 0 8px var(--neon-glow);
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 [class*="sidebar_"] [class*="link_"][class*="selected_"] [class*="name_"],
@@ -172,31 +171,15 @@ body {
 li[class*="dm_"] [class*="link_"] [class*="name_"] [class*="overflowTooltip_"],
 li[class*="dm_"] [class*="interactive_"] [class*="name_"] [class*="overflowTooltip_"] {
     color: var(--channels-default) !important;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 li[class*="dm_"] [class*="link_"]:hover [class*="name_"] [class*="overflowTooltip_"],
 li[class*="dm_"] [class*="interactive_"]:hover [class*="name_"] [class*="overflowTooltip_"] {
-    background: linear-gradient(180deg,
-        var(--white-1) 0%,
-        var(--channels-hover) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent !important;
-    filter: drop-shadow(0 0 4px var(--neon-glow));
-    transition: all 0.2s ease;
-}
-
-[class*="sidebar_"] [class*="link_"]:hover [class*="name_"] img,
-[class*="sidebar_"] [class*="interactive_"]:hover [class*="name_"] img,
-[class*="sidebar_"] [class*="name_"] [class*="emoji"],
-li[class*="dm_"] [class*="link_"]:hover [class*="name_"] img,
-li[class*="dm_"] [class*="interactive_"]:hover [class*="name_"] img,
-li[class*="dm_"] [class*="name_"] [class*="emoji"] {
-    -webkit-text-fill-color: initial;
-    color: initial;
-    opacity: 1;
-    filter: none;
+    color: var(--white-1) !important;
+    text-shadow:
+        0 0 4px var(--neon-glow),
+        0 0 8px var(--neon-glow);
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 /* ============================================================
@@ -401,21 +384,21 @@ li[class*="messageListItem_"]:hover {
 }
 [class*="message_"] [class*="username_"]:hover {
     color: var(--playful) !important;
-text-shadow: none !important;
-    }
+    text-shadow: none !important;
+}
 
 /* Member list usernames — Ice Blue keeps --playful on hover */
 [class*="members_"] [class*="name_"],
 [class*="membersWrap_"] [class*="name_"] {
     color: var(--text-2) !important;
     transition: color 0.15s ease;
-text-shadow: none !important;
-    }
+    text-shadow: none !important;
+}
 [class*="members_"] [class*="name_"]:hover,
 [class*="membersWrap_"] [class*="name_"]:hover {
     color: var(--playful) !important;
-text-shadow: none !important;
-    }
+    text-shadow: none !important;
+}
 
 /* Mention pill */
 [class*="mention_"] {
