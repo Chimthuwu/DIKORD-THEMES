@@ -14,7 +14,11 @@
 <p align="center"><i>17 discord themes. the avatars spin when you hover them in the actual app. that's the whole pitch.</i></p>
 
 <p align="center">
-<img src="assets/spin-demo.gif" width="260">
+<table><tr>
+<td><img src="assets/spin-demo.gif" width="300"><br><sub><b>spin on hover</b> — real footage</sub></td>
+<td><img src="assets/demos/vid1-hover-start.mp4" width="300"><br><sub><b>channel hover</b> — soft glows, color shift</sub></td>
+<td><img src="assets/demos/vid1-switch-deluxe.mp4" width="300"><br><sub><b>theme swap mid-air</b> — hover, then DELUXE kicks in</sub></td>
+</tr></table>
 </p>
 <p align="center"><sub>real footage. real spinning. real hidden servers.</sub></p>
 
@@ -71,6 +75,15 @@
     <img src="https://img.shields.io/badge/⬇️_DOWNLOAD_ALL_THEMES-7c81f2?style=for-the-badge&labelColor=0a0b14" alt="Download All">
   </a>
 </p>
+
+<p align="center"><sub>raw hover reels (uncut, all themes back to back):</sub></p>
+<p align="center">
+<a href="assets/raw/dikord-vid1.mp4">vid 1</a> ·
+<a href="assets/raw/dikord-vid2.mp4">vid 2</a> ·
+<a href="assets/raw/dikord-vid3.mp4">vid 3</a>
+</p>
+
+<br>
 
 <p align="center"><sub>click a name to grab that theme's .css. throw it in your Vencord/Equicord themes folder. flip it on. spin stuff.</sub></p>
 
