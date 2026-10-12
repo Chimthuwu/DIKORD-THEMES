@@ -17,7 +17,6 @@
 <img src="assets/demos/spin-tight.gif" width="200"><br>
 <sub><b>spin on hover</b> — server icons spin on hover, new theme loads right in</sub>
 </p>
-</p>
 <p align="center"><sub>real footage. real spinning. real hidden servers.</sub></p>
 
 <br>
