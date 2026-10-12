@@ -50,7 +50,10 @@
 <img src="assets/live-dikord.png" width="100%"><br><sub><b>DIKORD</b></sub>
 </p>
 <p align="center">
-<img src="assets/live-crimson.png" width="100%"><br><sub><b>SATANCORD</b></sub>
+<img src="assets/live-violet.png" width="100%"><br><sub><b>DIKORD V2 / Violet</b></sub>
+</p>
+<p align="center">
+<img src="assets/live-teal-neon.png" width="100%"><br><sub><b>Teal Cyan</b></sub>
 </p>
 <p align="center">
 <img src="assets/live-emerald.png" width="100%"><br><sub><b>Emerald</b></sub>
@@ -59,10 +62,13 @@
 <img src="assets/live-iceblue.png" width="100%"><br><sub><b>Ice Blue</b></sub>
 </p>
 <p align="center">
-<img src="assets/live-teal-neon.png" width="100%"><br><sub><b>Teal Cyan</b></sub>
+<img src="assets/live-gold.png" width="100%"><br><sub><b>Gold</b></sub>
 </p>
 <p align="center">
-<img src="assets/live-violet.png" width="100%"><br><sub><b>Violet</b></sub>
+<img src="assets/live-sunset.png" width="100%"><br><sub><b>Sunset</b></sub>
+</p>
+<p align="center">
+<img src="assets/live-catppuccin.png" width="100%"><br><sub><b>Catppuccin Mocha</b></sub>
 </p>
 
 <br>
