@@ -15,9 +15,9 @@
 
 <p align="center">
 <table><tr>
-<td><img src="assets/demos/spin-tight.gif" width="300"><br><sub><b>spin on hover</b> — server icons spin on hover, new theme loads right in</sub></td>
+<td><img src="assets/demos/spin-tight.gif" width="200"><br><sub><b>spin on hover</b> — server icons spin on hover, new theme loads right in</sub></td>
 <td><img src="assets/demos/vid1-hover-start.gif" width="300"><br><sub><b>channel hover</b> — soft glows, color shift</sub></td>
-<td><img src="assets/demos/vid1-switch-deluxe.gif" width="300"><br><sub><b>theme swap mid-air</b> — hover, then DELUXE kicks in</sub></td>
+<td><img src="assets/demos/vid1-switch-deluxe.gif" width="200"><br><sub><b>theme swap mid-air</b> — hover, then DELUXE kicks in</sub></td>
 </tr></table>
 </p>
 <p align="center"><sub>real footage. real spinning. real hidden servers.</sub></p>
